@@ -24,7 +24,7 @@ int main(int argc, char* argv[]){
 		std::cout << "renderer could not initialize:" << SDL_GetError() << std::endl;
 	}
 
-	Simulation coolSim(25, 25);
+	Simulation coolSim(25, 25, 1);
 	
 	SDL_Event event;
 	bool isrunning = true;
@@ -51,7 +51,7 @@ int main(int argc, char* argv[]){
 		SDL_SetRenderDrawColor(renderer, 128, 128, 128, 255);
 		SDL_RenderClear(renderer);
 
-		
+
 		for (int x = 0; x < 25; x++) {
 			for (int y = 0; y < 25; y++) {
 				Cell& chosenOne = coolSim.board[y * 25 + x];

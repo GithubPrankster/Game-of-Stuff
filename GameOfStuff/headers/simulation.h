@@ -2,7 +2,7 @@
 struct Simulation {
 	Cell* board;
 
-	Simulation(int xSize, int ySize);
+	Simulation(int xSize, int ySize, int distChance);
 	~Simulation();
 
 	bool boundCheck(int x, int y);

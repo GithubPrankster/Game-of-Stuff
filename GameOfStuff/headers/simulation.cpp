@@ -1,7 +1,7 @@
 #include "simulation.h"
 #include <random>
 
-Simulation::Simulation(int xSize, int ySize) {
+Simulation::Simulation(int xSize, int ySize, int distChance) {
 	board = new Cell[xSize * ySize];
 	
 	boardSizeX = xSize;
@@ -9,7 +9,7 @@ Simulation::Simulation(int xSize, int ySize) {
 
 	std::random_device device;
 	std::mt19937 twister(device());
-	std::uniform_int_distribution<int> distribution(0, 3);
+	std::uniform_int_distribution<int> distribution(0, 1 + distChance);
 	for (int x = 0; x < xSize; x++) {
 		for (int y = 0; y < ySize; y++) {
 			Cell& chosenOne = board[y * boardSizeX + x];
